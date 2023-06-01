@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
+    <title>Household</title>
+</head>
+
+<body>
+    <button class='logout' type="submit" onclick="location.href='{% url "Logout"%}'"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></button>
+    <div id="createHouseholdForm">
+    <h1>CREATE HOUSEHOLD</h1>
+    <form action="{% url "CreateHousehold" %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ createForm.as_p }}
+            <input class='submit'type='submit' value='SUBMIT'>
+    </form>
+    <button id="joinHousehold">JOIN HOUSEHOLD</button>
+</div>
+
+
+
+    <div class="hidden" id="joinHouseholdForm">
+    <h1>JOIN HOUSEHOLD</h1>
+    <form action="{% url "JoinHousehold" %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class='field' type='text', name='HouseholdName', placeholder='Name of household you want to join'></p>
+        <input class='submit' type='submit' value='SUBMIT'>
+
+    </form>
+    <button id="createHousehold">CREATE HOUSEHOLD</button>
+    </div>
+    <script src="{% static 'js/mainpage.js' %}"></script>
+</body>
+</html>

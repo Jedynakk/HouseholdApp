@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap');
+
+
+@media(max-width:480px) {
+    html {
+        background: rgb(254, 254, 254);
+        background: linear-gradient(14deg, rgba(254, 254, 254, 1) 0%, rgba(215, 191, 246, 1) 100%);
+        height: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Raleway', sans-serif;
+        overflow-x: hidden;
+        overflow-y: hidden;
+
+    }
+
+    body {
+        position: relative;
+        top: 30%;
+    }
+
+
+    .hidden {
+        display: none;
+    }
+
+    .logout {
+        border: none;
+        background: rgba(255, 255, 255, 0);
+        position: sticky;
+        left: -10rem;
+        top: -14rem;
+        width: 3rem;
+    }
+
+    .displayedForm {
+        display: block;
+    }
+
+    .field {
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 3rem;
+        width: 20rem;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(142, 26, 180);
+        border-radius: 1rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .submit {
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 3rem;
+        width: 15rem;
+        border-radius: 1rem;
+        background-color: rgb(255, 255, 255);
+        color: rgb(142, 26, 180);
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+
+    }
+
+    button {
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 3rem;
+        width: 15rem;
+        border-radius: 1rem;
+        background-color: rgb(255, 255, 255);
+        color: rgb(142, 26, 180);
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        position: relative;
+        top: 1rem;
+    }
+
+
+}

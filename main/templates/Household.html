@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/household.css' %}">
+    <title>{{household.name}} </title>
+</head>
+<body>
+
+    <div class='upperButtonBox'><button class='logout' type="submit" onclick="location.href='{% url "Logout"%}'"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></button>
+
+    <button class='logout' type="submit" onclick="location.href='{% url "leaveHousehold" household.name%}'">LEAVE HOUSEHOLD</button></div>
+    <h1 class='householdName'>{{household.name}}</h1>
+
+
+<div class="buttonBox">
+    <button id="expensesButton">EXPENSES</button>
+    <button id="shoppingListButton">SHOPPING LIST</button>
+    <button id="toDoButton">TO DO</button>
+</div>
+
+    <div class='hidden' id='expenses'>
+        <form action="{% url "AddExpense" household.name%}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{ addExpenseForm.as_p }}
+                
+            <input type='submit' class='submit' value="ADD">
+        </form>
+
+        <ul>
+            {%for expense in expenses%}
+                
+                    <li><div class='name'>{{expense.name}}</div>
+                        <div class='second'>{{expense.charge}} PLN</div>
+                        <button type="submit" action="" onclick="location.href='{% url "DeleteExpense" household.name expense.id  %}'">
+                            <i class="fa-sharp fa-solid fa-xmark fa-2xl"></i></button>
+                        <div class='third'>{{expense.until}}</div></li>
+            {%endfor%}
+        </ul>
+</div>
+
+
+    <div class='hidden' id="shopingList">
+    <form action="{% url "AddProduct" household.name%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ addProductForm.as_p }}
+            <input type='submit' class='submit' value="ADD">
+    </form>
+    <ul>
+        {%for product in products%}
+            <li><div class='name'>{{product.name}}</div>
+                <div class='second'>{{product.quantity}} {{product.get_unit_display}}</div>
+                <button type="submit" action="" onclick="location.href='{% url "DeleteProduct" household.name product.id  %}'"><i class="fa-sharp fa-solid fa-xmark fa-2xl"></i>    
+                </button></li>
+        {%endfor%}
+        </ul>
+    </div>
+
+
+    <div class="hidden" id="toDo">
+    <form action="{% url "AddTask" household.name%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ addTaskForm.as_p }}
+            <input type='submit' class='submit' value="ADD">
+        </form>
+            <ul>
+                {%for task in tasks%}
+                    
+                        <li><div class='name'>{{task.text}}</div>
+                            <div class='second'>{{task.until}}</div>
+                            <button type="submit" action="" onclick="location.href='{% url "DeleteTask" household.name task.id  %}'"><i class="fa-sharp fa-solid fa-xmark fa-2xl"></i>
+                            </button>
+                        </li>
+                    
+
+                {%endfor%}
+            </ul>
+    
+    </div>
+    
+    <script src="{% static 'js/household.js' %}"></script>
+</body>
+</body>
+</html>

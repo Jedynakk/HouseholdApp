@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap');
+
+@media(max-width:480px) {
+
+    body {
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        overflow-x: hidden;
+
+    }
+
+    .householdName {
+        font-family: 'Raleway', sans-serif;
+        font-size: 2.5rem;
+        text-transform: capitalize;
+    }
+
+    button {
+        font-family: 'Raleway', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: rgb(142, 26, 180);
+        width: 7rem;
+        height: 2.5rem;
+        background-color: white;
+        border-width: 0.2rem;
+        border-radius: 1rem;
+        border-color: rgb(142, 26, 180);
+        border: solid;
+    }
+
+
+    .logout {
+        border: none;
+        background-color: none;
+        float: right;
+        position: relative;
+        top: 1rem;
+    }
+
+
+    .dupa {
+        display: contents;
+    }
+
+
+    .buttonBox {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(142, 26, 180);
+        color: white
+    }
+
+    .expenses {
+        display: block;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        padding-top: 1rem;
+
+    }
+
+    .shoppinglist {
+        display: block;
+        justify-content: center;
+        text-align: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    .todo {
+        display: block;
+        justify-content: center;
+        text-align: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+
+    ul {
+        list-style: none;
+        display: block;
+        justify-content: center;
+        text-align: end;
+        position: relative;
+        top: 2rem;
+        padding-left: 0;
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+
+
+
+    li {
+
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 4.2rem;
+        width: 20rem;
+        border-radius: 1rem;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        color: rgb(142, 26, 180);
+        margin: 2rem;
+        -webkit-box-shadow: 8px 11px 35px -22px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 8px 11px 35px -22px rgba(66, 68, 90, 1);
+        box-shadow: 8px 11px 35px -22px rgba(66, 68, 90, 1);
+        margin: 2rem auto 0 auto;
+
+    }
+
+
+
+    li .name {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: rgb(142, 26, 180);
+        text-align: left;
+        margin-left: 1rem;
+    }
+
+    li .second {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        margin-left: 1rem;
+    }
+
+    li .third {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        margin-left: 1rem;
+        position: relative;
+        top: -2.5rem;
+    }
+
+    .field {
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 3rem;
+        width: 20rem;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(142, 26, 180);
+        border-radius: 1rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .submit {
+        border: solid;
+        border-color: rgb(142, 26, 180);
+        height: 3rem;
+        width: 15rem;
+        border-radius: 1rem;
+        background-color: rgb(255, 255, 255);
+        color: rgb(142, 26, 180);
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+
+
+
+
+}
